@@ -1,1 +1,103 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f6fb; color: #222; }
+nav { background: #1f3a5f; padding: 0 24px; display: flex; align-items: center; gap: 8px; }
+nav .brand { color: #fff; font-weight: bold; font-size: 18px; margin-right: 24px; padding: 16px 0; }
+nav a { color: #c8d6ea; text-decoration: none; padding: 16px 14px; }
+nav a:hover { color: #fff; }
+nav a.active { color: #fff; border-bottom: 3px solid #4fa3ff; }
+main { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+h1 { margin-top: 0; }
+.card { background: #fff; border-radius: 8px; padding: 16px; margin-bottom: 20px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.stat { text-align: center; color: #555; margin-bottom: 0; }
+.stat span { display: block; font-size: 30px; font-weight: bold; color: #1f3a5f; }
+.bar { background: #e3e8f0; border-radius: 6px; height: 16px; margin-top: 10px; overflow: hidden; }
+.fill { background: #2e9e5b; height: 100%; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px;
+        overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #eceff4; font-size: 14px; }
+th { background: #eef2f8; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+input, select { padding: 8px; border: 1px solid #c5cdd9; border-radius: 6px; font-size: 14px; }
+button { padding: 8px 14px; border: none; border-radius: 6px; background: #1f6feb;
+         color: #fff; cursor: pointer; font-size: 14px; }
+button:hover { background: #1558c0; }
+button.danger { background: #d64545; }
+button.danger:hover { background: #b03030; }
+form.inline { display: flex; gap: 6px; margin: 0; }
+.badge { padding: 3px 9px; border-radius: 12px; font-size: 12px; font-weight: bold; background: #e3e8f0; }
+.badge.todo, .badge.applied { background: #e3e8f0; color: #444; }
+.badge.in_progress, .badge.test { background: #fff1c7; color: #8a6100; }
+.badge.done, .badge.offer, .badge.easy { background: #d4f3df; color: #1c6b3a; }
+.badge.interview, .badge.medium { background: #d9e8ff; color: #1b4d99; }
+.badge.rejected, .badge.hard { background: #fbdcdc; color: #9a2a2a; }
+
+/* ---- added for edit, filters, search, summaries ---- */
+label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #555; }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.filter-bar input[name='q'] { flex: 1; min-width: 200px; }
+.actions { display: flex; gap: 6px; align-items: center; }
+a.btn { padding: 8px 14px; border-radius: 6px; background: #e3e8f0; color: #1f3a5f;
+        text-decoration: none; font-size: 14px; display: inline-block; }
+a.btn:hover { background: #d3dae6; }
+.muted { color: #666; font-size: 14px; margin: 0 0 10px 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+td .bar { margin-top: 0; }
+
+/* ---- added for starter checklist and overdue highlighting ---- */
+.overdue td { background: #fff1f1; }
+.ok { color: #1c6b3a; }
+.seed-box { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+            background: #eef6ff; border: 1px dashed #9cc2f0; border-radius: 8px;
+            padding: 12px 16px; margin-bottom: 20px; }
+.seed-box span { font-size: 14px; color: #35507a; }
+button.secondary { background: #35507a; }
+button.secondary:hover { background: #26395a; }
+
+/* ---- added for planner, readiness, streak and weekly chart ---- */
+.chk { flex-direction: row; align-items: center; gap: 6px; }
+fieldset.focus-box { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 16px; align-items: center;
+                     border: 1px solid #c5cdd9; border-radius: 6px; padding: 8px 12px; margin: 0; }
+fieldset.focus-box legend { font-size: 13px; color: #555; padding: 0 6px; }
+.insight { background: #fff8e1; border-left: 4px solid #f0b429; }
+.drives { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.drive { margin-bottom: 0; }
+.drive .bar { margin: 10px 0 6px 0; }
+.fill.good { background: #2e9e5b; }
+.fill.mid { background: #f0b429; }
+.fill.low { background: #d64545; }
+.week { display: flex; gap: 12px; align-items: flex-end; height: 150px; padding-top: 24px; }
+.week .col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+.week .vbar { width: 60%; max-width: 40px; background: #4fa3ff; border-radius: 4px 4px 0 0; }
+.week .num { font-size: 12px; color: #555; margin-bottom: 2px; }
+.week .day { font-size: 12px; color: #777; margin-top: 4px; }
+
+/* ---- added for login, export, delete confirmation and small screens ---- */
+nav { flex-wrap: wrap; }
+nav .spacer { flex: 1; }
+nav .user { color: #c8d6ea; font-size: 14px; margin-right: 10px; }
+nav .link-btn { background: transparent; border: 1px solid #c8d6ea; color: #c8d6ea; padding: 6px 12px; }
+nav .link-btn:hover { background: #2c4f7c; color: #fff; }
+.page-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.page-head h1 { margin: 0 0 12px 0; }
+.auth-card { max-width: 420px; margin: 40px auto; }
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.error { background: #fbdcdc; color: #9a2a2a; padding: 10px 12px; border-radius: 6px; }
+a.btn.danger { background: #d64545; color: #fff; }
+a.btn.danger:hover { background: #b03030; }
+button.good { background: #2e9e5b; }
+button.good:hover { background: #237a46; }
+.actions { flex-wrap: wrap; }
+
+@media (max-width: 800px) {
+  main { margin: 12px auto; padding: 0 10px; }
+  nav { padding: 0 10px; }
+  nav .brand { padding: 10px 0; margin-right: 10px; }
+  nav a { padding: 10px 8px; }
+  table { display: block; overflow-x: auto; white-space: nowrap; }
+  .week { gap: 6px; }
+}
+.nowrap, .badge { white-space: nowrap; }
+@media (min-width: 801px) { .actions { flex-wrap: nowrap; } }
 
