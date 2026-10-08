@@ -1,0 +1,14 @@
+# compiled output
+out/
+*.class
+
+# your personal database and logs
+data/
+*.db
+
+# IDE files
+.idea/
+*.iml
+
+# downloaded jars are fetched by the Dockerfile or the README steps
+lib/
